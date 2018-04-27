@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildpath>
+	<buildpathentry excluding="src|dao|dao/|database|database/|controller|controller/|model|model/|utils|utils/|view|view/" including="src" kind="src" path="src"/>
+	<buildpathentry kind="src" path="src/dao"/>
+	<buildpathentry kind="src" path="src/database"/>
+	<buildpathentry kind="src" path="src/controller"/>
+	<buildpathentry kind="src" path="src/model"/>
+	<buildpathentry kind="src" path="src/utils"/>
+	<buildpathentry kind="src" path="src/view"/>
+	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
+</buildpath>
