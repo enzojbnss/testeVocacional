@@ -21,6 +21,7 @@
 
 LOCK TABLES `intencaoarea` WRITE;
 /*!40000 ALTER TABLE `intencaoarea` DISABLE KEYS */;
+INSERT INTO `intencaoarea` VALUES (1,1,1,1),(2,1,1,4),(3,1,1,2),(4,1,2,1),(5,1,3,3),(6,1,3,4),(7,1,4,1),(8,1,4,4),(9,1,5,5),(10,1,6,4),(11,1,6,6),(12,1,7,7),(13,1,8,4),(14,1,8,8),(15,1,9,1),(16,1,9,9);
 /*!40000 ALTER TABLE `intencaoarea` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -33,4 +34,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-27 18:48:01
+-- Dump completed on 2018-04-30 18:35:04

@@ -16,24 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `pessoa`
---
-
-DROP TABLE IF EXISTS `pessoa`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `pessoa` (
-  `idPessoa` bigint(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(450) DEFAULT NULL,
-  `sobrenome` varchar(45) DEFAULT NULL,
-  `email` varchar(45) DEFAULT NULL,
-  `cpf` varchar(45) DEFAULT NULL,
-  `sexo` char(2) DEFAULT NULL,
-  PRIMARY KEY (`idPessoa`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `pessoa`
 --
 
@@ -52,4 +34,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-27 18:47:08
+-- Dump completed on 2018-04-30 18:33:28

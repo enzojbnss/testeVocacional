@@ -16,21 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `intencao`
---
-
-DROP TABLE IF EXISTS `intencao`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `intencao` (
-  `idIntencao` int(11) NOT NULL AUTO_INCREMENT,
-  `texto` varchar(450) DEFAULT NULL,
-  `ativo` char(2) DEFAULT 's',
-  PRIMARY KEY (`idIntencao`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `intencao`
 --
 
@@ -49,4 +34,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-27 18:47:08
+-- Dump completed on 2018-04-30 18:33:27

@@ -16,31 +16,12 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `intencaoarea`
---
-
-DROP TABLE IF EXISTS `intencaoarea`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `intencaoarea` (
-  `idIntencaoArea` int(11) NOT NULL AUTO_INCREMENT,
-  `peso` varchar(45) DEFAULT NULL,
-  `idIntencao` int(11) NOT NULL,
-  `idArea` int(11) NOT NULL,
-  PRIMARY KEY (`idIntencaoArea`),
-  KEY `fk_intencaoArea_intencao1_idx` (`idIntencao`),
-  KEY `fk_intencaoArea_area1_idx` (`idArea`),
-  CONSTRAINT `fk_intencaoArea_area1` FOREIGN KEY (`idArea`) REFERENCES `area` (`idArea`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_intencaoArea_intencao1` FOREIGN KEY (`idIntencao`) REFERENCES `intencao` (`idIntencao`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `intencaoarea`
 --
 
 LOCK TABLES `intencaoarea` WRITE;
 /*!40000 ALTER TABLE `intencaoarea` DISABLE KEYS */;
+INSERT INTO `intencaoarea` VALUES (1,1,1,1),(2,1,1,4),(3,1,1,2),(4,1,2,1),(5,1,3,3),(6,1,3,4),(7,1,4,1),(8,1,4,4),(9,1,5,5),(10,1,6,4),(11,1,6,6),(12,1,7,7),(13,1,8,4),(14,1,8,8),(15,1,9,1),(16,1,9,9);
 /*!40000 ALTER TABLE `intencaoarea` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +34,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-27 18:47:08
+-- Dump completed on 2018-04-30 18:33:27

@@ -21,6 +21,7 @@
 
 LOCK TABLES `area` WRITE;
 /*!40000 ALTER TABLE `area` DISABLE KEYS */;
+INSERT INTO `area` VALUES (1,'Contabilidade','s'),(2,'Design Gráfico','s'),(3,'Informática','s'),(4,'Adminitração','s'),(5,'Produçao de Video','s'),(6,'Eletrica','s'),(7,'Publiciadea e Propaganda','s'),(8,'Desiner grafico','s'),(9,'Desenho eletrotécnico','s');
 /*!40000 ALTER TABLE `area` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -33,4 +34,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-27 18:48:01
+-- Dump completed on 2018-04-30 18:35:04

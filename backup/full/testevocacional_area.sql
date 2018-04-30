@@ -16,26 +16,12 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `area`
---
-
-DROP TABLE IF EXISTS `area`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `area` (
-  `idArea` int(11) NOT NULL AUTO_INCREMENT,
-  `descricao` varchar(45) DEFAULT NULL,
-  `ativo` char(2) DEFAULT 's',
-  PRIMARY KEY (`idArea`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `area`
 --
 
 LOCK TABLES `area` WRITE;
 /*!40000 ALTER TABLE `area` DISABLE KEYS */;
+INSERT INTO `area` VALUES (1,'Contabilidade','s'),(2,'Design Gráfico','s'),(3,'Informática','s'),(4,'Adminitração','s'),(5,'Produçao de Video','s'),(6,'Eletrica','s'),(7,'Publiciadea e Propaganda','s'),(8,'Desiner grafico','s'),(9,'Desenho eletrotécnico','s');
 /*!40000 ALTER TABLE `area` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -48,4 +34,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-27 18:47:07
+-- Dump completed on 2018-04-30 18:33:27

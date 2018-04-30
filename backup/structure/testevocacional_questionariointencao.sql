@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `questionariointencao`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `questionariointencao` (
   `idQuestionarioIntencao` int(11) NOT NULL AUTO_INCREMENT,
-  `peso` varchar(45) DEFAULT NULL,
+  `peso` int(11) DEFAULT '1',
   `idQuestionario` int(11) NOT NULL,
   `idIntencao` int(11) NOT NULL,
   PRIMARY KEY (`idQuestionarioIntencao`),
@@ -44,4 +44,4 @@ CREATE TABLE `questionariointencao` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-27 18:48:53
+-- Dump completed on 2018-04-30 18:35:56

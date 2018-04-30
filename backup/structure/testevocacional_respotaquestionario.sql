@@ -31,7 +31,7 @@ CREATE TABLE `respotaquestionario` (
   KEY `fk_respotaquestionario_perguntaRespota1_idx` (`idPerguntaRespota`),
   CONSTRAINT `fk_respotaquestionario_perguntaRespota1` FOREIGN KEY (`idPerguntaRespota`) REFERENCES `perguntarespota` (`idPerguntaRespota`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_respotaquestionario_questionario1` FOREIGN KEY (`idQuestionario`) REFERENCES `questionario` (`idQuestionario`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -43,4 +43,4 @@ CREATE TABLE `respotaquestionario` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-27 18:48:54
+-- Dump completed on 2018-04-30 18:35:56

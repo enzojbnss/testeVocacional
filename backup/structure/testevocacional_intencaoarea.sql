@@ -23,8 +23,8 @@ DROP TABLE IF EXISTS `intencaoarea`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `intencaoarea` (
-  `idIntencaoArea` int(11) NOT NULL AUTO_INCREMENT,
-  `peso` varchar(45) DEFAULT NULL,
+  `idIntencaoArea` int(11) NOT NULL,
+  `peso` int(11) DEFAULT '1',
   `idIntencao` int(11) NOT NULL,
   `idArea` int(11) NOT NULL,
   PRIMARY KEY (`idIntencaoArea`),
@@ -44,4 +44,4 @@ CREATE TABLE `intencaoarea` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-27 18:48:53
+-- Dump completed on 2018-04-30 18:35:57

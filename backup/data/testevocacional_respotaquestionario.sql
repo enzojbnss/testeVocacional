@@ -21,7 +21,6 @@
 
 LOCK TABLES `respotaquestionario` WRITE;
 /*!40000 ALTER TABLE `respotaquestionario` DISABLE KEYS */;
-INSERT INTO `respotaquestionario` VALUES (1,1,1),(2,1,4),(3,1,5),(4,1,8),(5,1,9),(6,1,12),(7,1,13),(8,1,16),(9,1,17),(10,1,20),(11,1,21),(12,1,24);
 /*!40000 ALTER TABLE `respotaquestionario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -34,4 +33,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-27 18:48:02
+-- Dump completed on 2018-04-30 18:35:03

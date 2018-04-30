@@ -16,26 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `questionariointencao`
---
-
-DROP TABLE IF EXISTS `questionariointencao`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `questionariointencao` (
-  `idQuestionarioIntencao` int(11) NOT NULL AUTO_INCREMENT,
-  `peso` varchar(45) DEFAULT NULL,
-  `idQuestionario` int(11) NOT NULL,
-  `idIntencao` int(11) NOT NULL,
-  PRIMARY KEY (`idQuestionarioIntencao`),
-  KEY `fk_questionarioIntencao_questionario1_idx` (`idQuestionario`),
-  KEY `fk_questionarioIntencao_intencao1_idx` (`idIntencao`),
-  CONSTRAINT `fk_questionarioIntencao_intencao1` FOREIGN KEY (`idIntencao`) REFERENCES `intencao` (`idIntencao`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_questionarioIntencao_questionario1` FOREIGN KEY (`idQuestionario`) REFERENCES `questionario` (`idQuestionario`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `questionariointencao`
 --
 
@@ -53,4 +33,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-27 18:47:07
+-- Dump completed on 2018-04-30 18:33:26
