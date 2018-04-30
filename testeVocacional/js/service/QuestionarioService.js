@@ -8,6 +8,14 @@ var QuestionarioService = function() {
 		this.enviar(caminho, dados, funcao);
 	}
 	
+	this.encerraQuestionario = function(funcao) {
+		var caminho = "/questionario/encerraQuestionario";
+		var dados = {
+				"idQuestionario" : idQuestionario
+		}
+		this.enviar(caminho, dados, funcao);
+	}
+	
 	this.getID = function(funcao) {
 		var caminho = "/questionario/getID"
 		this.enviar(caminho, {}, funcao);

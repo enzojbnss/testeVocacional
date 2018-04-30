@@ -2,9 +2,11 @@
 require_once 'src/dao/PerguntaDao.php';
 require_once 'src/utils/Result.php';
 require_once 'src/utils/ViewData.php';
+
 use src\dao\PerguntaDao;
 use src\utils\Result;
 use src\utils\ViewData;
+
 class PerguntaController {
 	private $page;
 	public function __construct($page) {
@@ -18,7 +20,7 @@ class PerguntaController {
 			$viewData->add ( "idPessoa ", $idPessoa );
 			$viewData->incorpora ();
 			include $this->page->getRaiz ();
-		}else{
+		} else {
 			include 'src/view/home/index.php';
 		}
 	}
@@ -29,4 +31,5 @@ class PerguntaController {
 		$result = new Result ( $lista );
 		$result->useJson ();
 	}
+	
 }

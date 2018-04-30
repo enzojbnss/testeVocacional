@@ -9,7 +9,7 @@ class Area {
 	private $cursos;
 	public function __construct($dados) {
 		$this->id = $dados ["id"];
-		$this->descricao = $$dados ["descricao"];
+		$this->descricao = $dados ["descricao"];
 		$this->ativo = $dados ["ativo"];
 	}
 	public function getId() {

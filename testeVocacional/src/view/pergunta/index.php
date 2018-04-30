@@ -21,14 +21,15 @@
 	margin-left: 32%;
 	opacity: 0.55;
 }
-.jumbotron 	img{
-    width: 50%
-	  
- }
+
+.jumbotron 	img {
+	width: 50%
+}
+
 .jumbotron 	img:active {
-    position: relative;
-    padding: 10px;
- }
+	position: relative;
+	padding: 10px;
+}
 
 .pergunta {
 	margin-top: 10%;
@@ -40,10 +41,11 @@
 <script type="text/javascript" src="js/service/PerguntaService.js"></script>
 <script type="text/javascript" src="js/service/QuestionarioService.js"></script>
 <script type="text/javascript" src="js/service/RespostaService.js"></script>
+<script type="text/javascript" src="js/service/AreaService.js"></script>
 <script type="text/javascript" src="js/app/pergunta/index.js"></script>
 
 <div class="container" id="tela">
-	<div class="jumbotron">
+	<div id="dvPerguntas" class="jumbotron">
 		<div>Programa de orientação profissional</div>
 		<div class="pergunta">
 			<div class="col-md-3" style="margin-left: 0px">
@@ -57,4 +59,9 @@
 			</div>
 		</div>
 	</div>
+	<!--  <div id="dvAreas">
+		<div data-bind="foreach: areas, visible: areas.length > 0">
+            <label data-bind="value: area.descricao" ></label>		
+		</div>
+	</div>-->
 </div>

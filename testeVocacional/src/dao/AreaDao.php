@@ -15,7 +15,12 @@ class AreaDao {
 		$this->connection = $this->banco->conectar ( $this->banco );
 	}
 	public function getListaDiponiveis($idQuestionario) {
-		$sql = "SELECT idArea id, descricao, ativo  FROM vwareasdisponiveis where idQuestionario = ? and peso > 0; ";
+		$sql = "SELECT distinct idArea id, descricao, ativo  FROM area ";
+		$sql .= "INNER JOIN intencaoarea USING(idArea) ";
+		$sql .= "INNER JOIN questionariointencao USING(idIntencao) ";
+		$sql .= "WHERE questionariointencao.peso = ";
+		$sql .= "(SELECT  MAX(peso) FROM questionariointencao) ";
+		$sql .= "AND idQuestionario = ? ; ";
 		$recordSet = $this->connection->prepare ( $sql );
 		$recordSet->bindParam ( 1, $idQuestionario, PDO::PARAM_INT );
 		$recordSet->execute ();
@@ -27,7 +32,7 @@ class AreaDao {
 		if (is_array ( $dados )) {
 			foreach ( $dados as $indexLinha => $valorLInha ) {
 				if (is_array ( $valorLInha )) {
-					array_push ( $lista, new Area ( $dados ) );
+					array_push ( $lista, new Area ( $valorLInha ) );
 				}
 			}
 		}
