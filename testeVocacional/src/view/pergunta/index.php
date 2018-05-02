@@ -31,13 +31,29 @@
 	padding: 10px;
 }
 
+.jumbotron 	table {
+	width: 80%;
+	text-align: center;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
 .pergunta {
 	margin-top: 10%;
 	font-family: chinese-rocks;
 	font-size: 2em;
 }
-</style>
 
+.pergunta input{
+    font-weight: bolder;
+    font-stretch: ultra-expanded;
+    font-size: 1.5em;
+}
+
+
+
+</style>
+<script type="text/javascript" src="js/knockout.js"></script>
 <script type="text/javascript" src="js/service/PerguntaService.js"></script>
 <script type="text/javascript" src="js/service/QuestionarioService.js"></script>
 <script type="text/javascript" src="js/service/RespostaService.js"></script>
@@ -59,9 +75,15 @@
 			</div>
 		</div>
 	</div>
-	<!--  <div id="dvAreas">
-		<div data-bind="foreach: areas, visible: areas.length > 0">
-            <label data-bind="value: area.descricao" ></label>		
+	<div id="dvAreas" class="jumbotron">
+		<div>Seu perfil se adequa as seguintes areas</div>
+		<div class="pergunta">
+			<table data-bind="foreach: areas">
+				<tr>
+					<td><input type="text" style="font-weight: bolder;" data-bind="value: descricao"
+						readonly="readonly" /></td>
+				</tr>
+			</table>
 		</div>
-	</div>-->
+	</div>
 </div>

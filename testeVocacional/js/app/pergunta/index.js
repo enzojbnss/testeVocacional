@@ -4,8 +4,8 @@ var perguntaAtual = 0;
 var idQuestionario = 0;
 var idResposta = 0;
 var valorResposta = 0;
-var areas = [];
 $(function() {
+	$("#dvAreas").hide();
 	service = new PerguntaService();
 	service.getLista("carregaPerguntas");
 	service = null;
@@ -15,6 +15,8 @@ $(function() {
 	$(document).on('click', "#btnNegativo", function() {
 		responder(false);
 	});
+	areaViewModel = new AreaListViewModel();
+	ko.applyBindings(areaViewModel);
 });
 
 function carregaPerguntas(retorno) {
@@ -91,18 +93,37 @@ function exibiPergunta() {
 	}
 }
 
-function finalizaQuestionario(retorno){
+function finalizaQuestionario(retorno) {
 	if (retorno.status) {
 		service = new AreaService();
 		service.getLista("carregarAreas");
-	}else{
+	} else {
 	}
 }
 
-
-
-function carregarAreas(retorno){
-	$.each(retorno,function(index,area){
-		alert(area.descricao);
+function carregarAreas(retorno) {
+	$.each(retorno, function(index, area) {
+		//alert(area.descricao);
+		areaViewModel.addTask(area);
 	});
+	$("#dvPerguntas").hide();
+	$("#dvAreas").show();
+}
+
+function Area(data) {
+	this.id = ko.observable(data.id);
+	this.descricao = ko.observable(data.descricao);
+	this.ativo = ko.observable(data.ativo);
+}
+
+function AreaListViewModel() {
+	this.areas = ko.observableArray([]);
+
+	this.addTask = function(area) {
+		this.areas.push(new Area({
+			id : area.id,
+			descricao : area.descricao,
+			ativo : area.ativo
+		}));
+	};
 }
