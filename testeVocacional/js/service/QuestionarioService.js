@@ -1,7 +1,7 @@
 var QuestionarioService = function() {
 
 	this.add = function(funcao) {
-		var caminho = "/questionario/add";
+		var caminho = "questionario/add";
 		var dados = {
 				"idPessoa" : idPessoa
 		}
@@ -9,7 +9,7 @@ var QuestionarioService = function() {
 	}
 	
 	this.encerraQuestionario = function(funcao) {
-		var caminho = "/questionario/encerraQuestionario";
+		var caminho = "questionario/encerraQuestionario";
 		var dados = {
 				"idQuestionario" : idQuestionario
 		}
@@ -17,7 +17,7 @@ var QuestionarioService = function() {
 	}
 	
 	this.getID = function(funcao) {
-		var caminho = "/questionario/getID"
+		var caminho = "questionario/getID"
 		this.enviar(caminho, {}, funcao);
 	}
 	

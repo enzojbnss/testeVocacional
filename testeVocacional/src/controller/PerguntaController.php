@@ -11,7 +11,6 @@ class PerguntaController {
 	private $page;
 	public function __construct($page) {
 		$this->page = $page;
-		$_SESSION ["idPessoa"] = 1;
 	}
 	public function index() {
 		$viewData = new ViewData ();
@@ -21,7 +20,7 @@ class PerguntaController {
 			$viewData->incorpora ();
 			include $this->page->getRaiz ();
 		} else {
-			include 'src/view/home/index.php';
+			echo "<script>window.location= 'home';</script>";
 		}
 	}
 	public function lista() {

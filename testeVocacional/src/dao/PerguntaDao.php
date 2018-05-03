@@ -20,6 +20,7 @@ class PerguntaDao {
 		$dados = $recordSet->fetchAll ();
 		return $this->geraLista ( $dados );
 	}
+	
 	private function geraLista($dados) {
 		$lista = [ ];
 		if (is_array ( $dados )) {

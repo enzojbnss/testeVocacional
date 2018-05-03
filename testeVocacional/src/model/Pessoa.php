@@ -9,13 +9,15 @@ class Pessoa {
 	private $email = "";
 	private $cpf = "";
 	private $sexo = "";
-	public function __construct($id, $nome, $sobrenome, $email, $cpf, $sexo) {
+	private $dataNascimento = "";
+	public function __construct($id, $nome, $sobrenome, $email, $cpf, $sexo, $dataNascimento) {
 		$this->id = $id;
 		$this->nome = $nome;
 		$this->sobrenome = $sobrenome;
 		$this->email = $email;
 		$this->cpf = $cpf;
 		$this->sexo = $sexo;
+		$this->dataNascimento = $dataNascimento;
 	}
 	public function getId() {
 		return $this->id;
@@ -35,6 +37,9 @@ class Pessoa {
 	public function getSexo() {
 		return $this->sexo;
 	}
+	public function getDataNascimento() {
+		return $this->dataNascimento;
+	}
 	public function setId($id) {
 		$this->id = $id;
 	}
@@ -53,17 +58,20 @@ class Pessoa {
 	public function setSexo($sexo) {
 		$this->sexo = $sexo;
 	}
+	public function setDataNascimento($dataNascimento) {
+		$this->dataNascimento = $dataNascimento;
+	}
 	public function jsonSerialize() {
 		return get_object_vars ( $this );
 	}
-	public function __destruct(){
+	public function __destruct() {
 		$this->id = null;
 		$this->nome = null;
 		$this->sobrenome = null;
 		$this->email = null;
 		$this->cpf = null;
 		$this->sexo = null;
+		$this->dataNascimento = null;
 	}
-	
 }
 

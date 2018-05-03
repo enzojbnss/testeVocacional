@@ -4,7 +4,7 @@
 var PerguntaService = function() {
 
 	this.getLista = function(funcao) {
-		var caminho = "/pergunta/lista"
+		var caminho = "pergunta/lista"
 		this.enviar(caminho, {}, funcao);
 	}
 	
