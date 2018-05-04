@@ -7,7 +7,7 @@
 }
 
 .jumbotron {
-	background: #ffffff;
+	background: #a7c7dc;
 	text-align: center;
 	font-size: 1.7em;
 	width: 100%;
@@ -23,6 +23,10 @@
 .jumbotron 	img:active {
 	position: relative;
 	padding: 10px;
+}
+
+.jumbotron 	input {
+	font-size: 0.7em
 }
 
 .pergunta {
@@ -76,7 +80,7 @@
 				<div class="col-md-6">
 					<input name="txtEmail" type="email" class="form-control"
 						id="txtEmail" size="50" maxlength="60" placeholder="Email"
-						style="margin-top: 20px;" data-bind="value: email" />
+						style="margin-top: 12px;" data-bind="value: email" />
 				</div>
 				<div class="col-md-3">
 					<input title="Data de nascimento" id="txtDataNascimento"

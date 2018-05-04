@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once ('src/view/Page.php');
 
 use src\view\Page;
