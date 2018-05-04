@@ -52,4 +52,7 @@ class Page {
 		$param = $this->request [$paramName];
 		return json_decode ( $param );
 	}
+	public function setRaiz($raiz){
+		$this->raiz = "src/view/" .$raiz;
+	}
 }

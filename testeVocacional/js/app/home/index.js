@@ -38,18 +38,16 @@ function selectAtivo(me) {
 }
 
 function salvar() {
-	if (idSexo == 2) {
-		alert("O campo sexo não foi definido!");
-	} else {
-		pessoa = getPessoa()
-        service = new PessoaService();
+	pessoa = getPessoa()
+	if (validaDados(pessoa)) {
+		service = new PessoaService();
 		service.incluir("finalizaCadastro")
 	}
 }
 
-function finalizaCadastro(retorno){
-	if(retorno.status){
-		window.location= "pergunta";	
+function finalizaCadastro(retorno) {
+	if (retorno.status) {
+		window.location = "pergunta";
 	}
 }
 
@@ -65,4 +63,49 @@ function getPessoa() {
 	pessoa.cpf = $("#txtCpf").val();
 	pessoa.sexo = sexo[idSexo]
 	return pessoa;
+}
+
+function validaDados(pessoa) {
+	var valor = true;
+	if (pessoa.nome == "") {
+		alert("Por favor preencha o campo nome!");
+		valor = false;
+	} else {
+		if (pessoa.sobrenome == "") {
+			alert("Por favor preencha o campo sobrenome!");
+			valor = false;
+		} else {
+			if (validacaoEmail(pessoa.email)) {
+				if (pessoa.dataNascimento == "") {
+					alert("Por favor preencha o campo com data de nascimento!");
+					valor = false;
+				} else {
+					if (idSexo == 2) {
+						alert("O campo sexo não foi definido!");
+						valor = false;
+					}
+				}
+			} else {
+				valor = false;
+			}
+		}
+	}
+	return valor;
+}
+
+function validacaoEmail(field) {
+	valor = false;
+	var field = new String(field);
+	usuario = field.substring(0, field.indexOf("@"));
+	dominio = field.substring(field.indexOf("@") + 1, field.length);
+	if ((usuario.length >= 1) && (dominio.length >= 3)
+			&& (usuario.search("@") == -1) && (dominio.search("@") == -1)
+			&& (usuario.search(" ") == -1) && (dominio.search(" ") == -1)
+			&& (dominio.search(".") != -1) && (dominio.indexOf(".") >= 1)
+			&& (dominio.lastIndexOf(".") < dominio.length - 1)) {
+		return true;
+	}
+	if (valor == false) {
+		alert("O campo e-mail é invalido");
+	}
 }

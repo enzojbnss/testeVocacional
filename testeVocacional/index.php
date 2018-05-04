@@ -12,6 +12,10 @@ try {
 	$action = $page->getAction ();
 	$controller->$action ();
 } catch ( Exception $e ) {
+	include_once 'src/controller/HomeController.php';
+	$controller = new $className ( $page );
+	$action = $page->getAction ();
+	$controller->$action ();
 }
 
 ?>

@@ -3,7 +3,7 @@
 
 #tela {
 	position: absolute;
-	top: 10%;
+	top: 15%;
 }
 
 .jumbotron {

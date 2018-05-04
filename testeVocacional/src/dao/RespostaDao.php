@@ -47,7 +47,7 @@ class RespostaDao {
 		return new TesteExecute ( $teste, $mensagem );
 	}
 	public function getID($idPergunta,$idResposta) {
-		$sql = "SELECT idPerguntaRespota valor FROM testevocacional.perguntarespota where idPergunta = ? and idResposta = ? ";
+		$sql = "SELECT idPerguntaRespota valor FROM perguntarespota where idPergunta = ? and idResposta = ? ";
 		$recordSet = $this->connection->prepare ( $sql );
 		$recordSet->bindParam ( 1, $idPergunta, PDO::PARAM_INT );
 		$recordSet->bindParam ( 2, $idResposta, PDO::PARAM_INT );

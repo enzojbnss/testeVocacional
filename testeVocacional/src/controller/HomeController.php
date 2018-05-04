@@ -10,6 +10,7 @@ class HomeController{
 	}
 
 	public function index() {
+		//$this->page->setRaiz("LayoutAdm.php");
 		include $this->page->getRaiz ();
 	}
 	
