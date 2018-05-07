@@ -1,25 +1,17 @@
 <style>
 #tela {
-	position: relative;
-	top: 5%;
-	background: #fff; /* For browsers that do not support gradients */
-    background: linear-gradient(#f29400,#004687 ); /
-	opacity: 0.55;
-	-moz-border-radius: 7px;
-	-webkit-border-radius: 7px;
-	border-radius: 7px;
+	position: absolute;
+	top: 15%;
 }
 
 .jumbotron {
 	background: #a7c7dc;
 	text-align: center;
-	font-size: 1em;
+	font-size: 1.7em;
 	width: 100%;
-	height: 600px;
-	background-color: #FFFFFF;
-	opacity: 0.85;
-	margin-top: 35px;
-	padding-top: 35px;
+	height: 650px;
+	margin-left: 32%;
+	opacity: 0.55;
 }
 
 .jumbotron 	img {
@@ -32,12 +24,12 @@
 }
 
 .jumbotron 	input {
-	font-size: 1.5em
+	font-size: 0.7em
 }
 
 .pergunta {
 	margin-top: 20%;
-	font-size: 1.5em;
+	font-size: 2em;
 }
 
 .form-group {
@@ -58,17 +50,12 @@
 	height: 4%
 }
 </style>
-<script type="text/javascript" src="js/jquery/jquery.mask.js"></script>
 <script type="text/javascript" src="js/service/PessoaService.js"></script>
 <script type="text/javascript" src="js/componente/control/CheckBox.js"></script>
 <script type="text/javascript" src="js/app/home/index.js"></script>
-<div class=""></div>
-
-
-
-
 <div class="container" id="tela">
-	<div class="jumbotron">
+	<div class="jumbotron"
+		style="background-color: #FFFFFF; opacity: 0.65; margin-top: 10px; padding-top: 10px;">
 		<div class="form-horizontal">
 			<h4>
 				<label style="font-weight: lighter;">Cadastro de participante</label>
@@ -103,13 +90,12 @@
 			<div class="form-group">
 				<div class="col-md-6">
 					<input name="txtCpf" type="text" class="form-control" id="txtCpf"
-						size="50" maxlength="60" placeholder="cpf" />
+						size="50" maxlength="60" placeholder="cpf" data-bind="value: cpf" />
 				</div>
 				<div class="col-md-6">
 					<div class="checkbox">
 						<label for="optTermo"><input id="optTermo" type="checkbox"
-							style="width: 15px; height: 15px; top: 6px;" />Aceito receber
-							ofertas de cursos do Senac SP</label>
+							style="width: 15px; height: 15px; top: 12px;" />Aceito receber ofertas de cursos do Senac RJ</label>
 					</div>
 				</div>
 			</div>

@@ -9,7 +9,7 @@ $(function() {
 	$(document).on('click', "#btnSalvar", function() {
 		salvar();
 	});
-
+	$("#txtCpf").mask("999.999.999-99");
 });
 
 function addCheckBox() {

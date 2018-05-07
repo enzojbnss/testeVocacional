@@ -2,20 +2,18 @@
 <style>
 
 #tela {
-	position: relative;
-	top: 5%;;
+	position: absolute;
+	top: 15%;
 }
 
 .jumbotron {
-	background: #a7c7dc;
+	background: #ffffff;
 	text-align: center;
-	font-size: 1em;
+	font-size: 1.7em;
 	width: 100%;
 	height: 600px;
-	background-color: #FFFFFF;
-	opacity: 0.65;
-	margin-top: 35px;
-	padding-top: 35px;
+	margin-left: 32%;
+	opacity: 0.55;
 }
 
 .jumbotron 	img {
