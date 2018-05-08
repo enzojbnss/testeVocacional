@@ -4,6 +4,12 @@
 #tela {
 	position: relative;
 	top: 5%;;
+	background: #004687;
+    background: linear-gradient(#f29400,#004687 );
+    opacity: 0.55: ;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
 }
 
 .jumbotron {

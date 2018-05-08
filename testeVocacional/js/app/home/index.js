@@ -1,6 +1,6 @@
 var service = "";
 var idSexo = 2;
-var sexo = [ "m", "f" ];
+var sexo = [ "m", "f","i" ];
 var checkBoxGroup = [];
 pessoa = new Object();
 
@@ -66,29 +66,11 @@ function getPessoa() {
 }
 
 function validaDados(pessoa) {
-	var valor = true;
-	if (pessoa.nome == "") {
-		alert("Por favor preencha o campo nome!");
-		valor = false;
-	} else {
-		if (pessoa.sobrenome == "") {
-			alert("Por favor preencha o campo sobrenome!");
-			valor = false;
-		} else {
-			if (validacaoEmail(pessoa.email)) {
-				if (pessoa.dataNascimento == "") {
-					alert("Por favor preencha o campo com data de nascimento!");
-					valor = false;
-				} else {
-					if (idSexo == 2) {
-						alert("O campo sexo não foi definido!");
-						valor = false;
-					}
-				}
-			} else {
-				valor = false;
-			}
-		}
+	var valor = false;
+	if ( (pessoa.nome != "" && idSexo != 2) || (pessoa.nome != "" && validacaoEmail(pessoa.email)) || (pessoa.nome != "" && pessoa.cpf != "___.___.___-__") ||(pessoa.nome != "" && pessoa.dataNascimento != "") ){
+		valor = true;
+	}else {
+		alert("Por favor preencha o campo nome e pelo menos mais um outro campo que não seja o sobrenome");
 	}
 	return valor;
 }
@@ -106,6 +88,6 @@ function validacaoEmail(field) {
 		return true;
 	}
 	if (valor == false) {
-		alert("O campo e-mail é invalido");
+		//alert("O campo e-mail é invalido");
 	}
 }

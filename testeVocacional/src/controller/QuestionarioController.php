@@ -32,6 +32,9 @@ class QuestionarioController {
 		if($teste){
 			$dao = new IntencaoDao();
 			$teste = $dao->incluirAutomaticamente($_POST["idQuestionario"], $idResposta);
+		    if($teste->getStatus()){
+		    	//$_SESSION ["idPessoa"] = 0;
+		    }
 			$result = new Result ( [] );
 			$result->useSimpleJson($teste);
 		}

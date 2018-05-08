@@ -11,6 +11,7 @@ class HomeController{
 
 	public function index() {
 		//$this->page->setRaiz("LayoutAdm.php");
+		$_SESSION ["idPessoa"] = 0;
 		include $this->page->getRaiz ();
 	}
 	
