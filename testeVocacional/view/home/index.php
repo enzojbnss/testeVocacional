@@ -1,7 +1,13 @@
 <style>
 #tela {
-	position: absolute;
-	top: 15%;
+    position: relative;
+    top: 5%;
+    background: #fff;
+    background: linear-gradient(#f29400,#004687 );
+    opacity: 0.55: ;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
 }
 
 .jumbotron {
