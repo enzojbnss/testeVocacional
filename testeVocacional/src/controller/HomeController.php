@@ -15,5 +15,7 @@ class HomeController{
 		include $this->page->getRaiz ();
 	}
 	
-	
+	public function teste(){
+		include $this->page->getRaiz ();
+	}
 }

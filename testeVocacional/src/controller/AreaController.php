@@ -11,6 +11,7 @@ class AreaController{
 		$lista = $dao->getListaDiponiveis($_POST["idQuestionario"]);
 		$dao = null;
 		$result = new Result( $lista );
+		$_SESSION ["idPessoa"] = 0;
 		$result->useJson ();
 	}
 }
