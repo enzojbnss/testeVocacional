@@ -1,18 +1,18 @@
 
 <style>
-
 #tela {
+    font-family: Verdana Regular;
 	position: relative;
 	top: 5%;;
-	background: #004687;
-    background: linear-gradient(#f29400,#004687 );
-    opacity: 0.55: ;
-    -moz-border-radius: 7px;
-    -webkit-border-radius: 7px;
-    border-radius: 7px;
+	background: transparent;
+	opacity: 0.55:;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
 }
 
 .jumbotron {
+	font-family: Verdana Regular;	
 	background: #a7c7dc;
 	text-align: center;
 	font-size: 1em;
@@ -45,14 +45,17 @@
 	font-size: 2em;
 }
 
-.pergunta input{
-    font-weight: bolder;
-    font-stretch: ultra-expanded;
-    font-size: 1.5em;
+.pergunta input {
+	font-weight: bolder;
+	font-stretch: ultra-expanded;
+	font-size: 1.5em;
 }
 
-
-
+@media ( max-width : 800px) {
+	.jumbotron 	img {
+		width: 15%;
+	}
+}
 </style>
 <script type="text/javascript" src="js/service/PerguntaService.js"></script>
 <script type="text/javascript" src="js/service/QuestionarioService.js"></script>
@@ -62,7 +65,7 @@
 
 <div class="container" id="tela">
 	<div id="dvPerguntas" class="jumbotron">
-		<div>Programa de orientação profissional</div>
+		<div></div>
 		<div class="pergunta">
 			<div class="col-md-3" style="margin-left: 0px">
 				<img id="btnPositivo" alt="" src="img/positivo.png" />
@@ -80,10 +83,16 @@
 		<div class="pergunta">
 			<table data-bind="foreach: areas">
 				<tr>
-					<td><input type="text" style="font-weight: bolder;" data-bind="value: descricao"
-						readonly="readonly" /></td>
+					<td><input type="text" style="font-weight: bolder;"
+						data-bind="value: descricao" readonly="readonly" /></td>
 				</tr>
 			</table>
+			<br>
+			<div class="form-group">
+				<div class="col-md-12">
+					<button type="button" name="btnVoltar" id="btnVoltar">Voltar</button>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

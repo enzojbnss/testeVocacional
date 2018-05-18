@@ -15,9 +15,19 @@ $(function() {
 	$(document).on('click', "#btnNegativo", function() {
 		responder(false);
 	});
+	$(document).on('click', "#btnVoltar", function() {
+		voltar();
+	});
+	
 	areaViewModel = new AreaListViewModel();
 	ko.applyBindings(areaViewModel);
 });
+
+
+function voltar() {
+	window.location = "";
+}
+
 
 function carregaPerguntas(retorno) {
 	perguntas = retorno;

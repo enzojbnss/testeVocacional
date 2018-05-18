@@ -1,7 +1,8 @@
 var service = "";
 var idSexo = 2;
-var sexo = [ "m", "f","i" ];
+var sexo = [ "m", "f", "i" ];
 var checkBoxGroup = [];
+var aceite = "n";
 pessoa = new Object();
 
 $(function() {
@@ -56,10 +57,14 @@ function setSexo(value) {
 }
 
 function getPessoa() {
+	var dataTeste = new String($("#txtDataNascimento").val());
+	if ((dataTeste == "")) {
+		dataTeste = "nf";
+	}
 	pessoa.nome = $("#txtNome").val();
 	pessoa.sobrenome = $("#txtSobrenome").val();
 	pessoa.email = $("#txtEmail").val();
-	pessoa.dataNascimento = $("#txtDataNascimento").val();
+	pessoa.dataNascimento = dataTeste;
 	pessoa.cpf = $("#txtCpf").val();
 	pessoa.sexo = sexo[idSexo]
 	return pessoa;
@@ -67,9 +72,9 @@ function getPessoa() {
 
 function validaDados(pessoa) {
 	var valor = false;
-	if ( (pessoa.nome != "" && idSexo != 2) || (pessoa.nome != "" && validacaoEmail(pessoa.email)) || (pessoa.nome != "" && pessoa.cpf != "___.___.___-__") ||(pessoa.nome != "" && pessoa.dataNascimento != "") ){
+	if (pessoa.nome != "" && validacaoEmail(pessoa.email)) {
 		valor = true;
-	}else {
+	} else {
 		alert("Por favor preencha o campo nome e pelo menos mais um outro campo que não seja o sobrenome");
 	}
 	return valor;
@@ -88,6 +93,6 @@ function validacaoEmail(field) {
 		return true;
 	}
 	if (valor == false) {
-		//alert("O campo e-mail é invalido");
+		// alert("O campo e-mail é invalido");
 	}
 }

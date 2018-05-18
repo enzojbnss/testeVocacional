@@ -11,23 +11,25 @@ class PessoaController {
 	public function add() {
 		$dao = new PessoaDao ();
 		$pessoa = new Pessoa ( $_POST ["id"], $_POST ["nome"], $_POST ["sobrenome"], $_POST ["email"], $_POST ["cpf"], $_POST ["sexo"], $_POST ["dataNascimento"] );
-		if ($dao->existe ( $pessoa ) == false) {
-			$teste = $dao->incluir ( $pessoa );
-		}else{
-			$teste = new TesteExecute( true, "cadastro gravado com sucesso!" );
+		$qtd = $dao->existe ( $pessoa );
+		if ($qtd > 0) {
+			$teste = new TesteExecute ( true, $qtd );
+		} else {
+			$teste = $dao->incluir ( $pessoa, $_POST ["aceite"] );
 		}
-		if ($teste) {
+		if ($teste->getStatus()) {
 			try {
 				$idPessoa = $dao->getID ( $pessoa );
 				if ($idPessoa > 0) {
 					$_SESSION ["idPessoa"] = $idPessoa;
-				}else {
+				} else {
 					$_SESSION ["idPessoa"] = 0;
 				}
 			} catch ( Exception $e ) {
 				$idPessoa = 0;
 			}
 		}
+		$teste = new TesteExecute ( true, $qtd );
 		$dao = null;
 		$result = new Result ( [ ] );
 		$result->useSimpleJson ( $teste );

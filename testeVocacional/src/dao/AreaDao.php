@@ -18,11 +18,12 @@ class AreaDao {
 		$sql = "SELECT distinct idArea id, descricao, ativo  FROM area ";
 		$sql .= "INNER JOIN intencaoarea USING(idArea) ";
 		$sql .= "INNER JOIN questionariointencao USING(idIntencao) ";
-		$sql .= "WHERE questionariointencao.peso = ";
-		$sql .= "(SELECT  MAX(peso) FROM questionariointencao) ";
-		$sql .= "AND idQuestionario = ? ; ";
+		$sql .= "WHERE (questionariointencao.peso =";
+		$sql .= "(SELECT MAX(peso) FROM questionariointencao where idQuestionario = ? ))";
+		$sql .= "AND idQuestionario = ? order by questionariointencao.peso desc;";
 		$recordSet = $this->connection->prepare ( $sql );
 		$recordSet->bindParam ( 1, $idQuestionario, PDO::PARAM_INT );
+		$recordSet->bindParam ( 2, $idQuestionario, PDO::PARAM_INT );
 		$recordSet->execute ();
 		$dados = $recordSet->fetchAll ();
 		return $this->geraLista ( $dados );

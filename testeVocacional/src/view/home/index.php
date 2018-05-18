@@ -3,8 +3,7 @@
 	font-family: Verdana Regular;
 	position: relative;
 	top: 5%;
-	background: #004687;
-	background: linear-gradient(#f29400, #004687);
+	background: transparent;
 	opacity: 0.55:;
 	-moz-border-radius: 7px;
 	-webkit-border-radius: 7px;
@@ -22,7 +21,16 @@
 }
 
 .jumbotron 	img {
-	width: 50%
+	width: 6%;
+}
+
+@media (max-width: 800px) {
+	.jumbotron {
+	    height: 750px;
+	}
+	.jumbotron 	img {
+		width: 3%;
+	}
 }
 
 .jumbotron 	img:active {
@@ -60,15 +68,15 @@
 }
 
 #txtTitulo {
-	font-family: Verdana Bold ;
+	font-family: Verdana Bold;
 	font-weight: lighter;
 	font-size: 1.7em;
 }
 
-
-
-
-
+.imgOptBox {
+	position: relatiove;
+	width: 6%;
+}
 </style>
 <script type="text/javascript" src="js//jquery/jquery.mask.js"></script>
 <script type="text/javascript" src="js/service/PessoaService.js"></script>
@@ -84,7 +92,7 @@
 			<div class="form-group">
 				<div class="col-md-12">
 					<input name="txtNome" type="text" class="form-control" id="txtNome"
-						required="required" size="45" maxlength="70" placeholder="Nome"
+						required="required" size="45" maxlength="70" placeholder="*Nome"
 						data-bind="value: nome" />
 				</div>
 			</div>
@@ -96,25 +104,25 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-md-6">
+				<div class="col-sm-4 col-md-6">
 					<input name="txtEmail" type="email" class="form-control"
-						id="txtEmail" size="50" maxlength="60" placeholder="Email"
+						id="txtEmail" size="50" maxlength="60" placeholder="*Email"
 						style="margin-top: 12px;" data-bind="value: email" />
 				</div>
-				<div class="col-md-3"
+				<div class="col-sm-4 col-md-3"
 					style="font-family: Verdana Regular; font-size: 0.8em; margin-top: 12px; font-weight: normal;">
 					Data de nascimento</div>
-				<div class="col-md-3">
+				<div class="col-sm-4 col-md-3" >
 					<input title="Data de nascimento" id="txtDataNascimento"
-						class="form-control" type="date" data-bind="value: dataNascimento" />
+						class="form-control" type="date" data-bind="value: dataNascimento" min="1918-12-31" max="2004-12-31"   />
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-md-6">
+				<div class="col-sm-12 col-md-6">
 					<input name="txtCpf" type="text" class="form-control" id="txtCpf"
-						size="50" maxlength="60" placeholder="cpf" data-bind="value: cpf" />
+						size="50" maxlength="60" placeholder="CPF" data-bind="value: Cpf" />
 				</div>
-				<div class="col-md-6" style="opacity: 0;">
+				<div class="col-sm-12 col-md-6" style="opacity: 0;">
 					<div class="checkbox">
 						<label for="optTermo" style="font-size: 0.8em;"><input
 							id="optTermo" type="checkbox"
@@ -134,14 +142,15 @@
 				<div class="col-md-3"></div>
 				<div class="col-md-3">
 					<div class="checkbox">
-						<img id="optMasculino" alt="" src="img/chkBranco.png"
-							style="width: 6%"> <label for="optMasculino">Masculino</label>
+						<img class="imgOptBox" id="optMasculino" alt=""
+							src="img/chkBranco.png"> <label for="optMasculino">Masculino</label>
 					</div>
 				</div>
-				<div class="col-md-3" >
+				<div class="col-md-3">
 					<div class="checkbox">
-						<img id="optFeminino" alt="" src="img/chkBranco.png"
-							style="width: 6%"> <label for="optFeminino" style="left: 0px;">Feminino</label>
+						<img class="imgOptBox" id="optFeminino" alt=""
+							src="img/chkBranco.png"> <label for="optFeminino"
+							style="left: 0px;">Feminino</label>
 					</div>
 				</div>
 				<div class="col-md-3">&nbsp;</div>
