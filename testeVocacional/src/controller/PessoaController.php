@@ -10,7 +10,7 @@ use src\utils\TesteExecute;
 class PessoaController {
 	public function add() {
 		$dao = new PessoaDao ();
-		$pessoa = new Pessoa ( $_POST ["id"], $_POST ["nome"], $_POST ["sobrenome"], $_POST ["email"], $_POST ["cpf"], $_POST ["sexo"], $_POST ["dataNascimento"] );
+		$pessoa = new Pessoa ( $_POST ["id"], $_POST ["nome"], $_POST ["sobrenome"], $_POST ["email"], $_POST ["cpf"], $_POST ["celular"], $_POST ["telefone"], $_POST ["dataNascimento"] );
 		$qtd = $dao->existe ( $pessoa );
 		if ($qtd > 0) {
 			$teste = new TesteExecute ( true, $qtd );

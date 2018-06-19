@@ -15,7 +15,7 @@
 	text-align: center;
 	font-size: 1.7em;
 	width: 100%;
-	height: 650px;
+	height: 300px;
 	margin-left: 0%;
 	opacity: 0.55;
 }
@@ -24,9 +24,9 @@
 	width: 6%;
 }
 
-@media (max-width: 800px) {
+@media ( max-width : 800px) {
 	.jumbotron {
-	    height: 750px;
+		height: 300px;
 	}
 	.jumbotron 	img {
 		width: 3%;
@@ -90,77 +90,71 @@
 				<label id="txtTitulo">Cadastro de participante</label>
 			</h4>
 			<div class="form-group">
-				<div class="col-md-12">
+				<div class="col-sm-6 col-md-6">
 					<input name="txtNome" type="text" class="form-control" id="txtNome"
 						required="required" size="45" maxlength="70" placeholder="*Nome"
 						data-bind="value: nome" />
 				</div>
-			</div>
-			<div class="form-group">
-				<div class="col-md-12">
-					<input name="txtSobrenome" type="text" class="form-control"
-						id="txtSobrenome" required="required" size="45" maxlength="70"
-						placeholder="Sobrenome" data-bind="value: sobrenome" />
-				</div>
-			</div>
-			<div class="form-group">
-				<div class="col-sm-4 col-md-6">
+				<div class="col-sm-6 col-md-6">
 					<input name="txtEmail" type="email" class="form-control"
 						id="txtEmail" size="50" maxlength="60" placeholder="*Email"
+						data-bind="value: email" />
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-6 col-md-6" >
+					<input name="txtTelefone" type="text" class="form-control"
+						id="txtTelefone" size="50" maxlength="60" placeholder="Telefone"
 						style="margin-top: 12px;" data-bind="value: email" />
 				</div>
-				<div class="col-sm-4 col-md-3"
-					style="font-family: Verdana Regular; font-size: 0.8em; margin-top: 12px; font-weight: normal;">
-					Data de nascimento</div>
-				<div class="col-sm-4 col-md-3" >
-					<input title="Data de nascimento" id="txtDataNascimento"
-						class="form-control" type="date" data-bind="value: dataNascimento" min="1918-12-31" max="2004-12-31"   />
+				<div class="col-sm-6 col-md-6" style="opacity: 0;">
+					<input name="txtCelular" type="text" class="form-control"
+						id="txtCelular" size="50" maxlength="60" placeholder="Celular"
+						style="margin-top: 12px;" data-bind="value: email" />
 				</div>
+				
 			</div>
 			<div class="form-group">
-				<div class="col-sm-12 col-md-6">
-					<input name="txtCpf" type="text" class="form-control" id="txtCpf"
-						size="50" maxlength="60" placeholder="CPF" data-bind="value: Cpf" />
+				<div class="col-sm-6 col-md-6">
+					<button type="button" name="btnSalvar" id="btnSalvar">#PartiuComeçar</button>
 				</div>
-				<div class="col-sm-12 col-md-6" style="opacity: 0;">
-					<div class="checkbox">
-						<label for="optTermo" style="font-size: 0.8em;"><input
-							id="optTermo" type="checkbox"
-							style="width: 15px; height: 15px; top: 12px;" />Aceito receber
-							ofertas de cursos do Senac - SP</label>
-					</div>
-				</div>
-			</div>
-			<div class="form-group">
-				<div class="col-md-4"></div>
-				<div class="col-md-4" style="font-weight: normal;">
-					<br>Sexo:
-				</div>
-				<div class="col-md-4"></div>
-			</div>
-			<div class="form-group">
-				<div class="col-md-3"></div>
-				<div class="col-md-3">
-					<div class="checkbox">
-						<img class="imgOptBox" id="optMasculino" alt=""
-							src="img/chkBranco.png"> <label for="optMasculino">Masculino</label>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="checkbox">
-						<img class="imgOptBox" id="optFeminino" alt=""
-							src="img/chkBranco.png"> <label for="optFeminino"
-							style="left: 0px;">Feminino</label>
-					</div>
-				</div>
-				<div class="col-md-3">&nbsp;</div>
-			</div>
-			<div class="form-group">
-				<div class="col-md-12">
-					<button type="button" name="btnSalvar" id="btnSalvar">Salvar</button>
+				<div class="col-sm-6 col-md-6">
 					<button type="reset" name="btnLimpar" id="btnLimpar">Limpar</button>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<div style="display: none;">
+	<div class="form-group">
+		<div class="col-md-6">
+			<input name="txtSobrenome" type="text" class="form-control"
+				id="txtSobrenome" required="required" size="45" maxlength="70"
+				placeholder="Sobrenome" data-bind="value: sobrenome" />
+		</div>
+		<div class="col-sm-4 col-md-3"
+			style="font-family: Verdana Regular; font-size: 0.8em; margin-top: 12px; font-weight: normal; margin-left: -50px;">
+			Data de nascimento</div>
+		<div class="col-sm-4 col-md-3">
+			<input title="Data de nascimento" id="txtDataNascimento"
+				class="form-control" type="date" data-bind="value: dataNascimento"
+				min="1918-12-31" max="2004-12-31" />
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-sm-12 col-md-6">
+			<input name="txtCpf" type="text" class="form-control" id="txtCpf"
+				size="50" maxlength="60" placeholder="CPF" data-bind="value: Cpf" />
+		</div>
+		<div class="col-sm-12 col-md-6">
+			<div class="checkbox">
+				<label for="optTermo" style="font-size: 0.8em;"><input id="optTermo"
+					type="checkbox" style="width: 15px; height: 15px; top: 12px;" />Aceito
+					receber ofertas de cursos do Senac - SP</label>
+			</div>
+		</div>
+	</div>
+
+</div>
+

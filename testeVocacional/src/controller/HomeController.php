@@ -1,21 +1,13 @@
 <?php
 require_once 'src/view/Page.php';
-
-class HomeController{
-	
+class HomeController {
 	private $page;
-	
 	public function __construct($page) {
 		$this->page = $page;
 	}
-
 	public function index() {
-		//$this->page->setRaiz("LayoutAdm.php");
+		// $this->page->setRaiz("LayoutAdm.php");
 		$_SESSION ["idPessoa"] = 0;
-		include $this->page->getRaiz ();
-	}
-	
-	public function teste(){
 		include $this->page->getRaiz ();
 	}
 }

@@ -1,8 +1,9 @@
 <?php
-session_start();
+session_start ();
 include_once ('src/view/Page.php');
 
 use src\view\Page;
+
 $page = new Page ( $_REQUEST );
 $className = $page->getController () . 'Controller';
 
@@ -17,6 +18,4 @@ try {
 	$action = $page->getAction ();
 	$controller->$action ();
 }
-
-?>
-
+?>

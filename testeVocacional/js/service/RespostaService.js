@@ -8,10 +8,11 @@ var RespostaService = function() {
 		}
 		this.enviar(caminho, dados, funcao);
 	}
-	
+
 	this.add = function(funcao) {
 		var caminho = "resposta/add";
 		var dados = {
+			"idPergunta" : perguntas[perguntaAtual].id,
 			"idQuestionario" : idQuestionario,
 			"idResposta" : idResposta
 		}

@@ -9,8 +9,22 @@ class Page {
 	private $action;
 	private $request;
 	public function __construct($request, $base = "Layout.php") {
-		if(sizeof($request) == 0){
-			$request["url"] = "home/index";
+		$logado = false;
+		$url = explode ( "/", $request ["url"] );
+		if ($url [0]== "login" ) {
+			if (isset ( $_SESSION ["login"] )) {
+				if ($_SESSION ["login"] == true) {
+					$logado = true;
+				} else {
+					$logado = false;
+				}
+			}
+		}
+		if ($logado == false) {
+			$request ["url"] = "login/index";
+		}
+		if (sizeof ( $request ) == 0) {
+			$request ["url"] = "home/index";
 		}
 		$url = explode ( "/", $request ["url"] );
 		$folder = $url [0];
@@ -52,7 +66,7 @@ class Page {
 		$param = $this->request [$paramName];
 		return json_decode ( $param );
 	}
-	public function setRaiz($raiz){
-		$this->raiz = "src/view/" .$raiz;
+	public function setRaiz($raiz) {
+		$this->raiz = "src/view/" . $raiz;
 	}
 }

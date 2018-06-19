@@ -17,7 +17,7 @@
 	text-align: center;
 	font-size: 1em;
 	width: 100%;
-	height: 600px;
+	height: 500px;
 	background-color: #FFFFFF;
 	opacity: 0.65;
 	margin-top: 35px;
@@ -76,10 +76,16 @@
 			<div class="col-md-3">
 				<img id="btnNegativo" alt="" src="img/negativo.png" />
 			</div>
+			<br>
+			<div class="form-group">
+				<div class="col-md-12">
+					<button type="button" name="btnVoltar" id="btnVoltarQuestao">Voltar</button>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div id="dvAreas" class="jumbotron">
-		<div>Seu perfil se adequa as seguintes areas</div>
+		<div>Você se enquadra no seguinte perfil:</div>
 		<div class="pergunta">
 			<table data-bind="foreach: areas">
 				<tr>

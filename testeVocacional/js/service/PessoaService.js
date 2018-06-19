@@ -9,7 +9,8 @@ var PessoaService = function() {
 			"email" : pessoa.email,
 			"dataNascimento" : pessoa.dataNascimento,
 			"cpf" : pessoa.cpf,
-			"sexo" : pessoa.sexo,
+			"celular" : pessoa.celular,
+			"telefone" : pessoa.telefone,
 			"aceite" : aceite
 		}
 		this.enviar(caminho, dados, funcao);

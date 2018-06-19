@@ -18,16 +18,24 @@ $(function() {
 	$(document).on('click', "#btnVoltar", function() {
 		voltar();
 	});
+	$(document).on('click', "#btnVoltarQuestao", function() {
+		voltarPergunta();
+	});
 	
+
 	areaViewModel = new AreaListViewModel();
 	ko.applyBindings(areaViewModel);
 });
-
 
 function voltar() {
 	window.location = "";
 }
 
+
+function voltarPergunta(){
+	perguntaAtual--;
+	exibiPergunta();
+}
 
 function carregaPerguntas(retorno) {
 	perguntas = retorno;
@@ -93,6 +101,9 @@ function finalizaGravacao(retorno) {
 }
 
 function exibiPergunta() {
+	if(perguntaAtual == 0){
+		
+	}
 	$("#txtPergunta").text(perguntas[perguntaAtual].texto);
 	if (perguntaAtual == (perguntas.length - 1)) {
 		$("#btnPositivo").css("opacity", 0);
@@ -112,9 +123,12 @@ function finalizaQuestionario(retorno) {
 }
 
 function carregarAreas(retorno) {
+	contador = 0;
 	$.each(retorno, function(index, area) {
-		//alert(area.descricao);
-		areaViewModel.addTask(area);
+		if(contador == 0){
+			areaViewModel.addTask(area);	
+			contador++;
+		}		
 	});
 	$("#dvPerguntas").hide();
 	$("#dvAreas").show();

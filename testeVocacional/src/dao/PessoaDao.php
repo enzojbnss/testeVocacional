@@ -22,22 +22,24 @@ class PessoaDao {
 		$sobrenome = $pessoa->getSobrenome ();
 		$email = $pessoa->getEmail ();
 		$cpf = $pessoa->getCpf ();
-		$sexo = $pessoa->getSexo ();
+		$celular = $pessoa->getCelular();
+		$telefone = $pessoa->getTelefone();
 		$dataNascimento = $pessoa->getDataNascimento ();
 		if ($dataNascimento == "nf") {
-			$sql = "INSERT INTO pessoa (nome,sobrenome,email,cpf,sexo,aceite) VALUES (?,?,?,?,?,?);";
+			$sql = "INSERT INTO pessoa (nome,sobrenome,email,cpf,celular,telefone,aceite) VALUES (?,?,?,?,?,?,?);";
 		} else {
-			$sql = "INSERT INTO pessoa (nome,sobrenome,email,cpf,sexo,aceite,dataNascimento) VALUES (?,?,?,?,?,?,?);";
+			$sql = "INSERT INTO pessoa (nome,sobrenome,email,cpf,celular,telefone,aceite,dataNascimento) VALUES (?,?,?,?,?,?,?,?);";
 		}
 		$recordSet = $this->connection->prepare ( $sql );
 		$recordSet->bindParam ( 1, $nome, PDO::PARAM_STR );
 		$recordSet->bindParam ( 2, $sobrenome, PDO::PARAM_STR );
 		$recordSet->bindParam ( 3, $email, PDO::PARAM_STR );
 		$recordSet->bindParam ( 4, $cpf, PDO::PARAM_STR );
-		$recordSet->bindParam ( 5, $sexo, PDO::PARAM_STR );
-		$recordSet->bindParam ( 6, $aceite, PDO::PARAM_STR );
+		$recordSet->bindParam ( 5, $celular, PDO::PARAM_STR );
+		$recordSet->bindParam ( 6, $telefone, PDO::PARAM_STR );
+		$recordSet->bindParam ( 7, $aceite, PDO::PARAM_STR );
 		if ($dataNascimento != "nf") {
-			$recordSet->bindParam ( 7, $dataNascimento, PDO::PARAM_STR );
+			$recordSet->bindParam ( 8, $dataNascimento, PDO::PARAM_STR );
 		}
 		$teste = $recordSet->execute ();
 		if ($teste) {
@@ -52,9 +54,10 @@ class PessoaDao {
 		$sobrenome = $pessoa->getSobrenome ();
 		$email = $pessoa->getEmail ();
 		$cpf = $pessoa->getCpf ();
-		$sexo = $pessoa->getSexo ();
+		$celular = $pessoa->getCelular();
+		$telefone = $pessoa->getTelefone();
 		$dataNascimento = $pessoa->getDataNascimento ();
-		$sql = "SELECT idpessoa valor FROM pessoa where nome = ? and sobrenome  = ? and   email = ? and   cpf = ? and   sexo = ? ";
+		$sql = "SELECT idpessoa valor FROM pessoa where nome = ? and sobrenome  = ? and   email = ? and   cpf = ? and  celular = ?  and   telefone = ? ";
 		if ($dataNascimento != "nf") {
 			$sql .= "and   dataNascimento = ?  ;";
 		} else {
@@ -65,9 +68,10 @@ class PessoaDao {
 		$recordSet->bindParam ( 2, $sobrenome, PDO::PARAM_STR );
 		$recordSet->bindParam ( 3, $email, PDO::PARAM_STR );
 		$recordSet->bindParam ( 4, $cpf, PDO::PARAM_STR );
-		$recordSet->bindParam ( 5, $sexo, PDO::PARAM_STR );
+		$recordSet->bindParam ( 5, $celular, PDO::PARAM_STR );
+		$recordSet->bindParam ( 6, $telefone, PDO::PARAM_STR );
 		if ($dataNascimento != "nf") {
-			$recordSet->bindParam ( 6, $dataNascimento, PDO::PARAM_STR );
+			$recordSet->bindParam ( 7, $dataNascimento, PDO::PARAM_STR );
 		}
 		$recordSet->execute ();
 		$dados = $recordSet->fetchAll ();
@@ -78,9 +82,10 @@ class PessoaDao {
 		$sobrenome = $pessoa->getSobrenome ();
 		$email = $pessoa->getEmail ();
 		$cpf = $pessoa->getCpf ();
-		$sexo = $pessoa->getSexo ();
+		$celular = $pessoa->getCelular();
+		$telefone = $pessoa->getTelefone();
 		$dataNascimento = $pessoa->getDataNascimento ();
-		$sql = "SELECT count(*) valor FROM pessoa where nome = ? and sobrenome  = ? and   email = ? and   cpf = ? and   sexo = ? ";
+		$sql = "SELECT count(*) valor FROM pessoa where nome = ? and sobrenome  = ? and   email = ? and   cpf = ? and  celular = ?  and   telefone = ? ";
 		if ($dataNascimento != "nf") {
 			$sql .= "and   dataNascimento = ?  ;";
 		} else {
@@ -91,9 +96,10 @@ class PessoaDao {
 		$recordSet->bindParam ( 2, $sobrenome, PDO::PARAM_STR );
 		$recordSet->bindParam ( 3, $email, PDO::PARAM_STR );
 		$recordSet->bindParam ( 4, $cpf, PDO::PARAM_STR );
-		$recordSet->bindParam ( 5, $sexo, PDO::PARAM_STR );
+		$recordSet->bindParam ( 5, $celular, PDO::PARAM_STR );
+		$recordSet->bindParam ( 6, $telefone, PDO::PARAM_STR );
 		if ($dataNascimento != "nf") {
-			$recordSet->bindParam ( 6, $dataNascimento, PDO::PARAM_STR );
+			$recordSet->bindParam ( 7, $dataNascimento, PDO::PARAM_STR );
 		}
 		$recordSet->execute ();
 		$dados = $recordSet->fetchAll ();

@@ -46,6 +46,46 @@ class RespostaDao {
 		}
 		return new TesteExecute ( $teste, $mensagem );
 	}
+	public function alterar($idQuestionario, $idRespostaQuestionario) {
+		$mensagem = "";
+		$sql = "UPDATE respotaquestionario SET idPerguntaRespota = ? WHERE idrespotaquestionario = ?;";
+		$recordSet = $this->connection->prepare ( $sql );
+		$recordSet->bindParam ( 1, $idQuestionario, PDO::PARAM_INT );
+		$recordSet->bindParam ( 2, $idRespostaQuestionario, PDO::PARAM_INT );
+		$teste = $recordSet->execute ();
+		if ($teste) {
+			$mensagem = "respota gravada com sucesso!";
+		} else {
+			$mensagem = "falha ao gravar a resposta!";
+		}
+		return new TesteExecute ( $teste, $mensagem );
+	}
+	
+	public function getIDRespotaQuestionario($idPergunta,$idQuestionario) {
+		$sql = "SELECT idrespotaquestionario valor FROM testevocacional.respotaquestionario ";
+		$sql .= "INNER JOIN perguntarespota USING(idPerguntaRespota) ";
+		$sql .= "WHERE idPergunta = ? AND idQuestionario = ?; ";
+		$recordSet = $this->connection->prepare ( $sql );
+		$recordSet->bindParam ( 1, $idPergunta, PDO::PARAM_INT );
+		$recordSet->bindParam ( 2, $idQuestionario, PDO::PARAM_INT );
+		$recordSet->execute ();
+		$dados = $recordSet->fetchAll ();
+		return $this->geraValor ( $dados );
+	}
+	
+	public function existe($idPergunta,$idQuestionario) {
+		$sql = "SELECT Count(idrespotaquestionario) valor FROM testevocacional.respotaquestionario ";
+		$sql .= "INNER JOIN perguntarespota USING(idPerguntaRespota) ";
+		$sql .= "WHERE idPergunta = ? AND idQuestionario = ?; ";
+		$recordSet = $this->connection->prepare ( $sql );
+		$recordSet->bindParam ( 1, $idPergunta, PDO::PARAM_INT );
+		$recordSet->bindParam ( 2, $idQuestionario, PDO::PARAM_INT );
+		$recordSet->execute ();
+		$dados = $recordSet->fetchAll ();
+		return $this->geraValor ( $dados );
+	}
+	
+	
 	public function getID($idPergunta,$idResposta) {
 		$sql = "SELECT idPerguntaRespota valor FROM perguntarespota where idPergunta = ? and idResposta = ? ";
 		$recordSet = $this->connection->prepare ( $sql );

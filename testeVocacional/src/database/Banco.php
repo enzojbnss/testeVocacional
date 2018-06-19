@@ -39,7 +39,7 @@ class Banco {
 	private function tipo_bd() {
 		switch ($tipo = $this->tipo) {
 			case 'mysql' :
-				$con = new PDO ("mysql:host=localhost;dbname=testevocacional","root", "Renato1500", array (PDO::ATTR_PERSISTENT => true));
+				$con = new PDO ("mysql:host=localhost;dbname=testevocacional","root", "Renato1500", array (PDO::ATTR_PERSISTENT => true,PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
 				break;
 			case 'pgsql' :
 				$con = new PDO ( "pgsql:dbname={$bd};user={$user}; password={$pass};host=$host" );

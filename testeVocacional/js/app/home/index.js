@@ -1,42 +1,17 @@
 var service = "";
-var idSexo = 2;
-var sexo = [ "m", "f", "i" ];
 var checkBoxGroup = [];
 var aceite = "n";
 pessoa = new Object();
 
 $(function() {
-	addCheckBox();
 	$(document).on('click', "#btnSalvar", function() {
 		salvar();
 	});
 	$("#txtCpf").mask("999.999.999-99");
+	$("#txtCelular").mask("(99) 99999-9999");
+	$("#txtTelefone").mask("(99) 99999-9999");
 });
 
-function addCheckBox() {
-	nome = "optMasculino"
-	checkBoxGroup.push(new CheckBox(nome));
-	$(document).on('click', "#" + nome, function() {
-		selectAtivo(this);
-	});
-	nome = "optFeminino"
-	checkBoxGroup.push(new CheckBox(nome));
-	$(document).on('click', "#" + nome, function() {
-		selectAtivo(this);
-	});
-}
-
-function selectAtivo(me) {
-	chkSelecionado = true;
-	$.each(checkBoxGroup, function(index, item) {
-		if (item.id == me.id) {
-			item.ative(true);
-			setSexo(index);
-		} else {
-			item.ative(false);
-		}
-	})
-}
 
 function salvar() {
 	pessoa = getPessoa()
@@ -52,9 +27,7 @@ function finalizaCadastro(retorno) {
 	}
 }
 
-function setSexo(value) {
-	idSexo = value;
-}
+
 
 function getPessoa() {
 	var dataTeste = new String($("#txtDataNascimento").val());
@@ -66,7 +39,8 @@ function getPessoa() {
 	pessoa.email = $("#txtEmail").val();
 	pessoa.dataNascimento = dataTeste;
 	pessoa.cpf = $("#txtCpf").val();
-	pessoa.sexo = sexo[idSexo]
+	pessoa.celular = $("#txtCelular").val();
+	pessoa.telefone = $("#txtTelefone").val();
 	return pessoa;
 }
 
@@ -75,7 +49,7 @@ function validaDados(pessoa) {
 	if (pessoa.nome != "" && validacaoEmail(pessoa.email)) {
 		valor = true;
 	} else {
-		alert("Por favor preencha o campo nome e pelo menos mais um outro campo que não seja o sobrenome");
+		alert("Por favor preencha o nome e e-mail");
 	}
 	return valor;
 }
